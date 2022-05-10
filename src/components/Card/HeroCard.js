@@ -1,16 +1,16 @@
-import React from "react"
+import React from "react";
 
 //card component from Antd
-import { Card, Image } from "antd"
+import { Card, Image } from "antd";
 
 //styling from Antd
-import "antd/dist/antd.css"
+import "antd/dist/antd.min.css";
 
 function HeroCard({ heros }) {
   return (
     <>
       <Card title={heros.name} style={{ width: 300 }}>
-        <Image src={heros.images.sm} width={200} />
+        <Image src={heros.images.md} height={100} />
         <p>Combat: {heros.powerstats.combat}</p>
         <p>Durability: {heros.powerstats.durability}</p>
         <p>Intelligence: {heros.powerstats.intelligence}</p>
@@ -19,7 +19,7 @@ function HeroCard({ heros }) {
         <p>Strength: {heros.powerstats.strength}</p>
       </Card>
     </>
-  )
+  );
 }
 
-export default HeroCard
+export default HeroCard;
