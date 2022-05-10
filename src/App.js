@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import NavBar from "./Components/NavBar/navBar";
+import NavBar from "./components/NavBar/navBar";
 import { useState, useEffect } from "react";
-import Card from "./Components/card";
+import HeroCard from "./components/Card/HeroCard.js";
 
 let randomNumber = Math.floor(Math.random() * 564);
 let randomNumber2 = Math.floor(Math.random() * 564);
@@ -25,11 +25,15 @@ function App() {
   return heros ? (
     <>
       <NavBar />
-      <Card heros={heros[randomNumber]} />
-      <Card heros={heros[randomNumber2]} />
+      <HeroCard heros={heros[randomNumber]} />
+      <hr></hr>
+      <HeroCard heros={heros[randomNumber2]} />
     </>
   ) : (
-    <>Loading...</>
+    <>
+      <NavBar />
+      <>Loading...</>
+    </>
   );
 }
 
