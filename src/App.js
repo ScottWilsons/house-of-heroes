@@ -1,13 +1,14 @@
+import "./App.css"
+import NavBar from "./Components/NavBar/navBar"
 
-import './App.css';
-import NavBar from './Components/NavBar/navBar'
+// added to demo pair programming commits
 
 function App() {
   return (
     <>
-    <NavBar/>
+      <NavBar />
     </>
   )
 }
 
-export default App;
+export default App
