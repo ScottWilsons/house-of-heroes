@@ -10,6 +10,7 @@ console.log(randomNumber);
 
 function App() {
   const [heros, setheros] = useState("");
+  // const [stat, setstat] = useState();
 
   useEffect(() => {
     async function FetchSuperHero() {
@@ -22,12 +23,41 @@ function App() {
     FetchSuperHero();
   }, []);
 
+  const playerHero = heros[randomNumber];
+  const computerHero = heros[randomNumber2];
+
+  function theBattle(selectedStat) {
+    // setstat(selectedStat);
+
+    if (
+      playerHero.powerstats[selectedStat] ===
+      computerHero.powerstats[selectedStat]
+    ) {
+      console.log("Draw");
+    } else if (
+      playerHero.powerstats[selectedStat] <
+      computerHero.powerstats[selectedStat]
+    ) {
+      console.log("Lose");
+    } else if (
+      playerHero.powerstats[selectedStat] >
+      computerHero.powerstats[selectedStat]
+    ) {
+      console.log("Win");
+    }
+  }
+
   return heros ? (
     <>
       <NavBar />
-      <HeroCard heros={heros[randomNumber]} />
-      <hr></hr>
-      <HeroCard heros={heros[randomNumber2]} />
+      <button onClick={() => theBattle("combat")}>Combat</button>
+      <button onClick={() => theBattle("durability")}>Durability</button>
+      <button onClick={() => theBattle("intelligence")}>Intelligence</button>
+      <button onClick={() => theBattle("power")}>Power</button>
+      <button onClick={() => theBattle("speed")}>Speed</button>
+      <button onClick={() => theBattle("strength")}>Strength</button>
+      <HeroCard heros={computerHero} />
+      <HeroCard heros={playerHero} />
     </>
   ) : (
     <>
