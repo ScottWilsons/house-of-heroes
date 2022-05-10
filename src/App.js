@@ -1,36 +1,39 @@
-import React from "react";
-import "./App.css";
-import NavBar from "./Components/NavBar/navBar";
-import { useState, useEffect } from "react";
-import Card from "./Components/card";
+import React from "react"
+import "./App.css"
+import NavBar from "./components/NavBar/navBar"
+import { useState, useEffect } from "react"
+import HeroCard from "./components/Card/HeroCard.js"
 
-let randomNumber = Math.floor(Math.random() * 564);
-let randomNumber2 = Math.floor(Math.random() * 564);
-console.log(randomNumber);
+let randomNumber = Math.floor(Math.random() * 564)
+let randomNumber2 = Math.floor(Math.random() * 564)
+console.log(randomNumber)
 
 function App() {
-  const [heros, setheros] = useState("");
+  const [heros, setheros] = useState("")
 
   useEffect(() => {
     async function FetchSuperHero() {
       const response = await fetch(
         `https://akabab.github.io/superhero-api/api/all.json`
-      );
-      const data = await response.json();
-      setheros(data);
+      )
+      const data = await response.json()
+      setheros(data)
     }
-    FetchSuperHero();
-  }, []);
+    FetchSuperHero()
+  }, [])
 
   return heros ? (
     <>
       <NavBar />
-      <Card heros={heros[randomNumber]} />
-      <Card heros={heros[randomNumber2]} />
+      <HeroCard heros={heros[randomNumber]} />
+      <HeroCard heros={heros[randomNumber2]} />
     </>
   ) : (
-    <>Loading...</>
-  );
+    <>
+      <NavBar />
+      <>Loading...</>
+    </>
+  )
 }
 
-export default App;
+export default App
