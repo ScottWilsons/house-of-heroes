@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/navBar";
 import { useState, useEffect } from "react";
 import HeroCard from "./components/Card/HeroCard.js";
-
+import "./style.sass";
 // let randomNumber = Math.floor(Math.random() * 564)
 // let randomNumber2 = Math.floor(Math.random() * 564)
 
@@ -66,7 +66,7 @@ function App() {
   return heros ? (
     <>
       <NavBar playerScore={playerScore} computerScore={computerScore} />
-      <button disabled={disableButton} onClick={() => theBattle("combat")}>
+      <button className="combatButton" disabled={disableButton} onClick={() => theBattle("combat")}>
         Combat
       </button>
       <button disabled={disableButton} onClick={() => theBattle("durability")}>
