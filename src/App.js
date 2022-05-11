@@ -6,11 +6,11 @@ import HeroCard from "./components/Card/HeroCard.js";
 
 let randomNumber = Math.floor(Math.random() * 564);
 let randomNumber2 = Math.floor(Math.random() * 564);
-console.log(randomNumber);
 
 function App() {
   const [heros, setheros] = useState("");
-  // const [stat, setstat] = useState();
+  const [playerScore, setplayerScore] = useState(0);
+  const [computerScore, setcomputerScore] = useState(0);
 
   useEffect(() => {
     async function FetchSuperHero() {
@@ -27,8 +27,6 @@ function App() {
   const computerHero = heros[randomNumber2];
 
   function theBattle(selectedStat) {
-    // setstat(selectedStat);
-
     if (
       playerHero.powerstats[selectedStat] ===
       computerHero.powerstats[selectedStat]
@@ -39,17 +37,19 @@ function App() {
       computerHero.powerstats[selectedStat]
     ) {
       console.log("Lose");
+      setcomputerScore(+1);
     } else if (
       playerHero.powerstats[selectedStat] >
       computerHero.powerstats[selectedStat]
     ) {
       console.log("Win");
+      setplayerScore(+1);
     }
   }
 
   return heros ? (
     <>
-      <NavBar />
+      <NavBar playerScore={playerScore} computerScore={computerScore} />
       <button onClick={() => theBattle("combat")}>Combat</button>
       <button onClick={() => theBattle("durability")}>Durability</button>
       <button onClick={() => theBattle("intelligence")}>Intelligence</button>
