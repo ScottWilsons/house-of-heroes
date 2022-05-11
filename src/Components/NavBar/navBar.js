@@ -1,9 +1,10 @@
 import React from "react";
 import Title from "./title";
+import "./navstyle.sass";
 
 function NavBar({ computerScore, playerScore }) {
   return (
-    <div>
+    <div className="navBar">
       <Title />
       <p>Computer Score {computerScore}</p>
       <p>Player Score {playerScore}</p>

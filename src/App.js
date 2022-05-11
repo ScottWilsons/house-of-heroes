@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import NavBar from "./components/NavBar/navBar";
 import { useState, useEffect } from "react";
 import HeroCard from "./components/Card/HeroCard.js";
@@ -65,6 +64,7 @@ function App() {
 
   return heros ? (
     <>
+    <div className="container">
       <NavBar playerScore={playerScore} computerScore={computerScore} />
       <button className="combatButton" disabled={disableButton} onClick={() => theBattle("combat")}>
         Combat
@@ -92,6 +92,7 @@ function App() {
       <button onClick={() => initRound()}>
         {playButton ? "Play Again" : "Play"}
       </button>
+      </div>
     </>
   ) : (
     <>
