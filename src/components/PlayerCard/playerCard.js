@@ -1,9 +1,10 @@
 import React from "react"
+import "./playerCard.sass";
 
 export default function PlayerCard({ heros, disableButton, theBattle }) {
   return (
     <>
-      <div className="PlayerCard">
+      <div className="playerCard-container">
         <div>{heros.name}</div>
         <img src={heros.images.md} alt="card pic" />
         <button disabled={disableButton} onClick={() => theBattle("combat")}>

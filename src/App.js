@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 //components
 import NavBar from "./components/NavBar/navBar"
-import HeroCard from "./components/Card/HeroCard.js"
+import HeroCard from "./components/Card/heroCard.js"
 import PlayerCard from "./components/PlayerCard/playerCard"
 
 //styling
@@ -66,7 +66,11 @@ function App() {
     <>
       <div className="container">
         <NavBar playerScore={playerScore} computerScore={computerScore} />
+        <div className="cardContainer">
         {computerCard ? <HeroCard heros={computerCard} /> : <></>}
+        <button onClick={() => initRound()}>
+          {playButton ? "Play Again" : "Play"}
+        </button>
         {playerCard ? (
           <PlayerCard
             heros={playerCard}
@@ -76,9 +80,7 @@ function App() {
         ) : (
           <></>
         )}
-        <button onClick={() => initRound()}>
-          {playButton ? "Play Again" : "Play"}
-        </button>
+        </div>
       </div>
     </>
   ) : (

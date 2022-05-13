@@ -1,23 +1,20 @@
 import React from "react";
-
-//card component from Antd
-import { Card, Image } from "antd";
-
-//styling from Antd
-import "antd/dist/antd.min.css";
+import "./heroCard.sass";
 
 function HeroCard({ heros }) {
   return (
     <>
-      <Card title={heros.name} style={{ width: 300 }}>
-        <Image src={heros.images.md} height={100} />
+      <div className="heroCard-container">
+        <div >{heros.name}</div>
+        <img className="card-image" src={heros.images.md} alt="card pic" />
         <p>Combat: {heros.powerstats.combat}</p>
         <p>Durability: {heros.powerstats.durability}</p>
         <p>Intelligence: {heros.powerstats.intelligence}</p>
         <p>Power: {heros.powerstats.power}</p>
         <p>Speed: {heros.powerstats.speed}</p>
         <p>Strength: {heros.powerstats.strength}</p>
-      </Card>
+        {/* <div className=".back"></div> */}
+      </div>
     </>
   );
 }
