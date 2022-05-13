@@ -17,6 +17,7 @@ function App() {
   const [computerCard, setComputerCard] = useState()
   const [playButton, setPlayButton] = useState(false)
   const [disableButton, setDisableButton] = useState(false)
+  const [playDisabled, setPlayDisabled] = useState(false)
 
   useEffect(() => {
     async function FetchSuperHero() {
@@ -31,6 +32,7 @@ function App() {
 
   function theBattle(selectedStat) {
     setDisableButton(true)
+    setPlayDisabled(false)
     if (
       playerCard.powerstats[selectedStat] ===
       computerCard.powerstats[selectedStat]
@@ -54,6 +56,7 @@ function App() {
   function initRound() {
     setDisableButton(false)
     setPlayButton(true)
+    setPlayDisabled(true)
     let randomNumber = Math.floor(Math.random() * 564)
     let randomNumber2 = Math.floor(Math.random() * 564)
     const playerHero = heros[randomNumber]
@@ -67,19 +70,23 @@ function App() {
       <div className="container">
         <NavBar playerScore={playerScore} computerScore={computerScore} />
         <div className="cardContainer">
-        {computerCard ? <HeroCard heros={computerCard} /> : <></>}
-        <button onClick={() => initRound()}>
-          {playButton ? "Play Again" : "Play"}
-        </button>
-        {playerCard ? (
-          <PlayerCard
-            heros={playerCard}
-            disableButton={disableButton}
-            theBattle={theBattle}
-          />
-        ) : (
-          <></>
-        )}
+          {computerCard ? <HeroCard heros={computerCard} /> : <></>}
+          <button
+            className="battleButton"
+            disabled={playDisabled}
+            onClick={() => initRound()}
+          >
+            {playButton ? "Play Again" : "Play"}
+          </button>
+          {playerCard ? (
+            <PlayerCard
+              heros={playerCard}
+              disableButton={disableButton}
+              theBattle={theBattle}
+            />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
