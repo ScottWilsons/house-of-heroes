@@ -70,14 +70,6 @@ function App() {
       <div className="container">
         <NavBar playerScore={playerScore} computerScore={computerScore} />
         <div className="cardContainer">
-          {computerCard ? <HeroCard heros={computerCard} /> : <></>}
-          <button
-            className="battleButton"
-            disabled={playDisabled}
-            onClick={() => initRound()}
-          >
-            {playButton ? "Play Again" : "Play"}
-          </button>
           {playerCard ? (
             <PlayerCard
               heros={playerCard}
@@ -87,6 +79,14 @@ function App() {
           ) : (
             <></>
           )}
+          <button
+            className="battleButton"
+            disabled={playDisabled}
+            onClick={() => initRound()}
+          >
+            {playButton ? "Play Again" : "Play"}
+          </button>
+          {computerCard ? <HeroCard heros={computerCard} /> : <></>}
         </div>
       </div>
     </>
