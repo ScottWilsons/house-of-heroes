@@ -1,15 +1,19 @@
-import React from "react";
-import Title from "./title";
-import "./navstyle.sass";
+import React from "react"
+
+//components
+import Title from "./title"
+
+//styling
+import "./navstyle.sass"
 
 function NavBar({ computerScore, playerScore }) {
   return (
     <div className="navBar">
       <Title />
-      <p>Computer Score {computerScore}</p>
       <p>Player Score {playerScore}</p>
+      <p>Computer Score {computerScore}</p>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
