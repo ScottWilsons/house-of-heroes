@@ -9,9 +9,11 @@ import "./navstyle.sass"
 function NavBar({ computerScore, playerScore }) {
   return (
     <div className="navBar">
+      <div className="score-container">
+        <p className="scores">Player Score: {playerScore}</p>
+        <p className="scores">Computer Score: {computerScore}</p>
+      </div>
       <Title />
-      <p>Player Score {playerScore}</p>
-      <p>Computer Score {computerScore}</p>
     </div>
   )
 }

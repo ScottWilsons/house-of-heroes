@@ -70,8 +70,8 @@ function App() {
 
   return heros ? (
     <>
+      <NavBar playerScore={playerScore} computerScore={computerScore} />
       <div className="container">
-        <NavBar playerScore={playerScore} computerScore={computerScore} />
         <div className="cardContainer">
           {playerCard ? (
             <PlayerCard
