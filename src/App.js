@@ -23,9 +23,14 @@ function App() {
     async function FetchSuperHero() {
       const response = await fetch(
         `https://akabab.github.io/superhero-api/api/all.json`
-      );
-      const data = await response.json();
-      setheros(data);
+
+      )
+      const data = await response.json()
+      // let module = require("./data.js")
+      // let data = module.data
+      // console.log(data)
+      setheros(data)
+
     }
     FetchSuperHero();
   }, []);
@@ -54,21 +59,24 @@ function App() {
   }
 
   function initRound() {
-    setDisableButton(false);
-    setPlayButton(true);
-    setPlayDisabled(true);
-    let randomNumber = Math.floor(Math.random() * 564);
-    let randomNumber2 = Math.floor(Math.random() * 564);
-    const playerHero = heros[randomNumber];
-    setPlayerCard(playerHero);
-    const computerHero = heros[randomNumber2];
-    setComputerCard(computerHero);
+
+    setDisableButton(false)
+    setPlayButton(true)
+    setPlayDisabled(true)
+    let randomNumber = Math.floor(Math.random() * 564)
+    let randomNumber2 = Math.floor(Math.random() * 564)
+    const playerHero = heros[randomNumber]
+    setPlayerCard(playerHero)
+    const computerHero = heros[randomNumber2]
+    setComputerCard(computerHero)
+    console.log(computerHero)
+
   }
 
   return heros ? (
     <>
+      <NavBar playerScore={playerScore} computerScore={computerScore} />
       <div className="container">
-        <NavBar playerScore={playerScore} computerScore={computerScore} />
         <div className="cardContainer">
           {playerCard ? (
             <PlayerCard
