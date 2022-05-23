@@ -1,12 +1,14 @@
 .heroCard
         background-color: transparent;
+
         width: 220px;
         height: 380px;
+
         perspective: 1000px; /* Remove this if you don't want the 3D effect */
         display: flex
         flex-direction: column;
         margin: 10px;
-        
+
 .heroCard-inner
         position: relative;
         height: 100%;
@@ -20,6 +22,7 @@
 .heroCard:hover .heroCard-inner
         transform: rotateY(180deg);
        
+
 .heroCard-back, .heroCard-front
         position: absolute;
         width: 100%;
@@ -28,6 +31,7 @@
         backface-visibility: hidden;
 
 .card-image
+
         height: 80%;
         width: 90%;
         object-fit: cover;
@@ -36,9 +40,11 @@
         margin-bottom: 18%;
 
 
+
 p
         margin: 0px;
         text-align: center;
+
 
 .heroCard-front
         background-color: transparent;
