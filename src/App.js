@@ -21,13 +21,13 @@ function App() {
 
   useEffect(() => {
     async function FetchSuperHero() {
-      // const response = await fetch(
-      //     `https://akabab.github.io/superhero-api/api/all.json`
-      //   )
-      //   const data = await response.json()
-      let module = require("./data.js")
-      let data = module.data
-      console.log(data)
+      const response = await fetch(
+        `https://akabab.github.io/superhero-api/api/all.json`
+      )
+      const data = await response.json()
+      // let module = require("./data.js")
+      // let data = module.data
+      // console.log(data)
       setheros(data)
     }
     FetchSuperHero()
@@ -66,6 +66,7 @@ function App() {
     setPlayerCard(playerHero)
     const computerHero = heros[randomNumber2]
     setComputerCard(computerHero)
+    console.log(computerHero)
   }
 
   return heros ? (

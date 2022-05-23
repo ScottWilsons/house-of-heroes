@@ -10,7 +10,6 @@ function HeroCard({ heros }) {
         <div className="heroCard-inner">
           <div className="heroCard-front"></div>
           <div className="heroCard-back">
-            <div>{heros.name}</div>
             <img className="card-image" src={heros.images.md} alt="card pic" />
             <p>Combat: {heros.powerstats.combat}</p>
             <p>Durability: {heros.powerstats.durability}</p>
@@ -18,6 +17,7 @@ function HeroCard({ heros }) {
             <p>Power: {heros.powerstats.power}</p>
             <p>Speed: {heros.powerstats.speed}</p>
             <p>Strength: {heros.powerstats.strength}</p>
+            <h1 className="heroname">{heros.name}</h1>
           </div>
         </div>
       </div>
