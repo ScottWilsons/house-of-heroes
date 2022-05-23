@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 //components
 import NavBar from "./components/NavBar/navBar";
-import HeroCard from "./components/Card/heroCard.js.js.js";
+import HeroCard from "./components/Card/heroCard";
 import PlayerCard from "./components/PlayerCard/playerCard";
 
 //styling
@@ -23,14 +23,12 @@ function App() {
     async function FetchSuperHero() {
       const response = await fetch(
         `https://akabab.github.io/superhero-api/api/all.json`
-
-      )
-      const data = await response.json()
+      );
+      const data = await response.json();
       // let module = require("./data.js")
       // let data = module.data
       // console.log(data)
-      setheros(data)
-
+      setheros(data);
     }
     FetchSuperHero();
   }, []);
@@ -59,18 +57,16 @@ function App() {
   }
 
   function initRound() {
-
-    setDisableButton(false)
-    setPlayButton(true)
-    setPlayDisabled(true)
-    let randomNumber = Math.floor(Math.random() * 564)
-    let randomNumber2 = Math.floor(Math.random() * 564)
-    const playerHero = heros[randomNumber]
-    setPlayerCard(playerHero)
-    const computerHero = heros[randomNumber2]
-    setComputerCard(computerHero)
-    console.log(computerHero)
-
+    setDisableButton(false);
+    setPlayButton(true);
+    setPlayDisabled(true);
+    let randomNumber = Math.floor(Math.random() * 564);
+    let randomNumber2 = Math.floor(Math.random() * 564);
+    const playerHero = heros[randomNumber];
+    setPlayerCard(playerHero);
+    const computerHero = heros[randomNumber2];
+    setComputerCard(computerHero);
+    console.log(computerHero);
   }
 
   return heros ? (
