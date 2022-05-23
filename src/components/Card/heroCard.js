@@ -1,18 +1,15 @@
-import React from "react"
+import React from "react";
 
 //styling
-import "./heroCard.sass"
+import "./heroCard.sass";
 
-
-function HeroCard({ heros }) {
+function HeroCard({ heros, style }) {
   return (
     <>
       <div className="heroCard">
-        <div className="heroCard-inner">
-
+        <div className={style}>
           <div className="heroCard-front"></div>
           <div className="heroCard-back">
-
             <img className="card-image" src={heros.images.md} alt="card pic" />
             <p>Combat: {heros.powerstats.combat}</p>
             <p>Durability: {heros.powerstats.durability}</p>
@@ -22,14 +19,11 @@ function HeroCard({ heros }) {
 
             <p>Strength: {heros.powerstats.strength}</p>
             <h1 className="heroname">{heros.name}</h1>
-
           </div>
         </div>
       </div>
     </>
-
-  )
+  );
 }
 
-export default HeroCard
-
+export default HeroCard;

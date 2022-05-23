@@ -18,6 +18,19 @@ function App() {
   const [playButton, setPlayButton] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const [playDisabled, setPlayDisabled] = useState(false);
+  const [style, setStyle] = useState("heroCard-inner");
+
+  const changeStyle = () => {
+    console.log("you just clicked");
+
+    setStyle("heroCard-transform");
+  };
+
+  const changeStyle2 = () => {
+    console.log("you just clicked");
+
+    setStyle("heroCard-inner");
+  };
 
   useEffect(() => {
     async function FetchSuperHero() {
@@ -33,7 +46,11 @@ function App() {
     FetchSuperHero();
   }, []);
 
+  console.log(style);
+
   function theBattle(selectedStat) {
+    changeStyle();
+    console.log(style);
     setDisableButton(true);
     setPlayDisabled(false);
     if (
@@ -57,6 +74,7 @@ function App() {
   }
 
   function initRound() {
+    changeStyle2();
     setDisableButton(false);
     setPlayButton(true);
     setPlayDisabled(true);
@@ -90,7 +108,11 @@ function App() {
           >
             {playButton ? "Play Again" : "Play"}
           </button>
-          {computerCard ? <HeroCard heros={computerCard} /> : <></>}
+          {computerCard ? (
+            <HeroCard heros={computerCard} style={style} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
