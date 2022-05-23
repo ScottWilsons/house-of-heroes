@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 //components
-import NavBar from "./Main/NavBar/navBar";
-import HeroCard from "./Main/Card/heroCard.js";
-import PlayerCard from "./Main/PlayerCard/playerCard";
+import NavBar from "./Components/NavBar/navBar";
+import HeroCard from "./Components/Card/heroCard.js.js";
+import PlayerCard from "./Components/PlayerCard/playerCard";
 
 //styling
 import "./style.sass";
