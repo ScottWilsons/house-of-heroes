@@ -83,7 +83,9 @@ function App() {
     const playerHero = heros[randomNumber];
     setPlayerCard(playerHero);
     const computerHero = heros[randomNumber2];
-    setComputerCard(computerHero);
+    setTimeout(() => {
+      setComputerCard(computerHero);
+    }, 1000);
     console.log(computerHero);
   }
 
