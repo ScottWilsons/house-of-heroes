@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 //components
-import NavBar from "./main/NavBar/navBar";
-import HeroCard from "./main/Card/heroCard.js.js.js";
-import PlayerCard from "./main/PlayerCard/playerCard";
+import NavBar from "./components/NavBar/navBar";
+import HeroCard from "./components/Card/heroCard";
+import PlayerCard from "./components/PlayerCard/playerCard";
 
 //styling
 import "./style.sass";
@@ -18,6 +18,19 @@ function App() {
   const [playButton, setPlayButton] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const [playDisabled, setPlayDisabled] = useState(false);
+  const [style, setStyle] = useState("heroCard-inner");
+
+  const changeStyle = () => {
+    console.log("you just clicked");
+
+    setStyle("heroCard-transform");
+  };
+
+  const changeStyle2 = () => {
+    console.log("you just clicked");
+
+    setStyle("heroCard-inner");
+  };
 
   useEffect(() => {
     async function FetchSuperHero() {
@@ -25,12 +38,19 @@ function App() {
         `https://akabab.github.io/superhero-api/api/all.json`
       );
       const data = await response.json();
+      // let module = require("./data.js")
+      // let data = module.data
+      // console.log(data)
       setheros(data);
     }
     FetchSuperHero();
   }, []);
 
+  console.log(style);
+
   function theBattle(selectedStat) {
+    changeStyle();
+    console.log(style);
     setDisableButton(true);
     setPlayDisabled(false);
     if (
@@ -54,6 +74,7 @@ function App() {
   }
 
   function initRound() {
+    changeStyle2();
     setDisableButton(false);
     setPlayButton(true);
     setPlayDisabled(true);
@@ -63,12 +84,13 @@ function App() {
     setPlayerCard(playerHero);
     const computerHero = heros[randomNumber2];
     setComputerCard(computerHero);
+    console.log(computerHero);
   }
 
   return heros ? (
     <>
+      <NavBar playerScore={playerScore} computerScore={computerScore} />
       <div className="container">
-        <NavBar playerScore={playerScore} computerScore={computerScore} />
         <div className="cardContainer">
           {playerCard ? (
             <PlayerCard
@@ -86,7 +108,11 @@ function App() {
           >
             {playButton ? "Play Again" : "Play"}
           </button>
-          {computerCard ? <HeroCard heros={computerCard} /> : <></>}
+          {computerCard ? (
+            <HeroCard heros={computerCard} style={style} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
