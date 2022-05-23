@@ -86,6 +86,7 @@ function App() {
     setTimeout(() => {
       setComputerCard(computerHero);
     }, 1000);
+    //working out setTimeout to delay getting the next computer card, need to wrok out how to not interfere with loading the first card
     console.log(computerHero);
   }
 
