@@ -1,25 +1,95 @@
-.playerCard-container 
+.playerCard
         background-color: transparent;
-        width: 360px;
-        height: 510px;
+        width: 268px;
+        height: 380px;
+        perspective: 1000px; // Remove this if you don't want the 3D effect 
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+.playerCard-inner
+        position: relative;
+        height: 100%;
+        width: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
         border: 2px solid #000000; 
         box-shadow: 1px 2px 15px 0.5px grey;
-        perspective: 1000px; /* Remove this if you don't want the 3D effect */
-        display: flex
-        flex-direction: column;
-        border-radius: 5px
-        margin: 10px
-      
+        border-radius: 5px;
+ 
 
-img 
-        height: 70%;
-        width: 100%;
-        object-fit: cover;
-
-.card-container-flip 
-        position: relative;
+.playerCard-back, .playerCard-front
+        position: absolute;
         width: 100%;
         height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 5px;
+
+.plyrCard-image
+        height: 80%;
+        width: 90%;
+        object-fit: cover;
+        border: 3px solid silver; 
+        margin: 3.5%;
+
+.playerCard-front
+        background-color: transparent;
+        background-size: cover;
+        background-image: url("../../../public/SeekPng.com_playing-card-back-png_1215767.png");
+        
+.playerCard-back
+        background-color: #0492c2;
+       
+.player-heroname
+        color: white;
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 1.3em;
+        text-shadow: 2px 2px 4px black;
+        font-weight: 800;
+        position: absolute;
+        padding: 3.5%;
+        bottom: 11.5%;
+        margin: 0px;
+
+.player-button
+        border-radius: 50%;
+        width: 30px; 
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        font: 0.8em sans-serif;
+        font-weight: bold;
         text-align: center;
-        transition: transform 0.8s;
-      
+        align-items: center;
+        justify-content: center;
+   
+.playerCard-stat-nmb
+        font: 0.8em sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin: 25% auto;
+
+.playerCard-stats-cntr
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+#playerCard-combat
+        background-color: red;
+
+#playerCard-durability
+        background-color: green;
+
+#playerCard-intelligence
+        background-color: white;
+
+#playerCard-power
+        background-color: orange;
+
+#playerCard-speed
+        background-color: yellow;
+
+#playerCard-strength
+        background-color: purple;
