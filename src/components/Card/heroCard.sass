@@ -1,11 +1,9 @@
 .heroCard
         background-color: transparent;
-
-        width: 220px;
+        width: 268px;
         height: 380px;
-
-        perspective: 1000px; /* Remove this if you don't want the 3D effect */
-        display: flex
+        perspective: 1000px; // Remove this if you don't want the 3D effect 
+        display: flex;
         flex-direction: column;
         margin: 10px;
 
@@ -19,9 +17,6 @@
         box-shadow: 1px 2px 15px 0.5px grey;
         border-radius: 5px;
         
-/* .heroCard:hover .heroCard-inner
-        transform: rotateY(180deg); */
-       
 .heroCard-transform 
         position: relative;
         height: 100%;
@@ -39,26 +34,18 @@
         height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        border-radius: 5px;
 
-.card-image
-
+.heroCard-image
         height: 80%;
         width: 90%;
         object-fit: cover;
         border: 3px solid silver; 
         margin: 3.5%;
-        margin-bottom: 18%;
-
-
-
-p
-        margin: 0px;
-        text-align: center;
-
 
 .heroCard-front
         background-color: transparent;
-        background-size: cover
+        background-size: cover;
         background-image: url("../../../public/SeekPng.com_playing-card-back-png_1215767.png");
      
 .heroCard-back
@@ -76,3 +63,38 @@ p
         padding: 3.5%;
         bottom: 11.5%;
         margin: 0px;
+
+.heroCard-stats
+        border-radius: 50%;
+        width: 30px; 
+        height: 30px;
+        margin: auto;
+   
+.heroCard-stat-nmb
+        font: 0.8em sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin: 25% auto;
+
+.heroCard-stats-cntr
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+#heroCard-combat
+        background-color: red;
+
+#heroCard-durability
+        background-color: green;
+
+#heroCard-intelligence
+        background-color: white;
+
+#heroCard-power
+        background-color: orange;
+
+#heroCard-speed
+        background-color: yellow;
+
+#heroCard-strength
+        background-color: purple;

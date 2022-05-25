@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 //styling
-import "./heroCard.sass";
+import "./heroCard.sass"
 
 function HeroCard({ heros, style }) {
   return (
@@ -9,21 +9,43 @@ function HeroCard({ heros, style }) {
       <div className="heroCard">
         <div className={style}>
           <div className="heroCard-front"></div>
-          <div className="heroCard-back">
-            <img className="card-image" src={heros.images.md} alt="card pic" />
-            <p>Combat: {heros.powerstats.combat}</p>
-            <p>Durability: {heros.powerstats.durability}</p>
-            <p>Intelligence: {heros.powerstats.intelligence}</p>
-            <p>Power: {heros.powerstats.power}</p>
-            <p>Speed: {heros.powerstats.speed}</p>
 
-            <p>Strength: {heros.powerstats.strength}</p>
+          <div className="heroCard-back">
+            <img
+              className="heroCard-image"
+              src={heros.images.md}
+              alt="card pic"
+            />
             <h1 className="heroname">{heros.name}</h1>
+            <div className="heroCard-stats-cntr">
+              <div className="heroCard-stats" id="heroCard-combat">
+                <p className="heroCard-stat-nmb">{heros.powerstats.combat}</p>
+              </div>
+              <div className="heroCard-stats" id="heroCard-durability">
+                <p className="heroCard-stat-nmb">
+                  {heros.powerstats.durability}
+                </p>
+              </div>
+              <div className="heroCard-stats" id="heroCard-intelligence">
+                <p className="heroCard-stat-nmb">
+                  {heros.powerstats.intelligence}
+                </p>
+              </div>
+              <div className="heroCard-stats" id="heroCard-power">
+                <p className="heroCard-stat-nmb">{heros.powerstats.power}</p>
+              </div>
+              <div className="heroCard-stats" id="heroCard-speed">
+                <p className="heroCard-stat-nmb">{heros.powerstats.speed}</p>
+              </div>
+              <div className="heroCard-stats" id="heroCard-strength">
+                <p className="heroCard-stat-nmb">{heros.powerstats.strength}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default HeroCard;
+export default HeroCard
