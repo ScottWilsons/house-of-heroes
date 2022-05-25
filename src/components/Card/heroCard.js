@@ -11,7 +11,11 @@ function HeroCard({ heros, style }) {
           <div className="heroCard-front"></div>
 
           <div className="heroCard-back">
-            <img className="card-image" src={heros.images.md} alt="card pic" />
+            <img
+              className="heroCard-image"
+              src={heros.images.md}
+              alt="card pic"
+            />
             <h1 className="heroname">{heros.name}</h1>
             <div className="heroCard-stats-cntr">
               <div className="heroCard-stats" id="heroCard-combat">

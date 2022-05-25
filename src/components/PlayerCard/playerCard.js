@@ -1,11 +1,12 @@
-import React from "react";
-import "./playerCard.sass";
+import React from "react"
+import "./playerCard.sass"
 
 export default function PlayerCard({ heros, disableButton, theBattle }) {
   return (
     <>
       <div className="playerCard">
-        <img className="card-image" src={heros.images.md} alt="card pic" />
+        <div className="playerCard-front"></div>
+        <img className="plyrCard-image" src={heros.images.md} alt="card pic" />
         <h1 className="player-heroname">{heros.name}</h1>
         <div className="playerCard-stats-cntr">
           <button
@@ -59,5 +60,5 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -2,16 +2,24 @@
         background-color: #0492c2;
         width: 268px;
         height: 380px;
-        display: flex
+        display: flex;
         flex-direction: column;
-        margin: 10px;
+        margin: 0px;
         border: 2px solid #000000; 
         box-shadow: 1px 2px 15px 0.5px grey;
         border-radius: 5px;
+
+.playerCard-front
+        background-color: transparent;
+        background-size: cover;
+        background-image: url("../../../public/SeekPng.com_playing-card-back-png_1215767.png");
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 5px;
       
-.card-image 
-        height: 80%;
-        width: 90%;
+.plyrCard-image 
+        max-height: 80%;
+        max-width: 90%;
         object-fit: cover;
         border: 3px solid silver; 
         margin: 3.5%;
