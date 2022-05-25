@@ -14,7 +14,7 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
             disabled={disableButton}
             onClick={() => theBattle("combat")}
           >
-           {heros.powerstats.combat}
+            {heros.powerstats.combat}
           </button>
           <button
             className="player-button"
