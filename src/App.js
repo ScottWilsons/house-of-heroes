@@ -18,14 +18,15 @@ function App() {
   const [playButton, setPlayButton] = useState(false)
   const [disableButton, setDisableButton] = useState(false)
   const [playDisabled, setPlayDisabled] = useState(false)
-  const [style, setStyle] = useState("heroCard-inner")
+  const [style, setStyle] = useState("heroCard-transform")
 
   const changeStyle = () => {
-    setStyle("heroCard-transform")
-  }
-
-  const changeStyle2 = () => {
-    setStyle("heroCard-inner")
+    console.log(style)
+    if (style === "heroCard-transform") {
+      setStyle("heroCard-inner")
+    } else {
+      setStyle("heroCard-transform")
+    }
   }
 
   useEffect(() => {
@@ -67,7 +68,7 @@ function App() {
   }
 
   function initRound() {
-    changeStyle2()
+    changeStyle()
     setDisableButton(false)
     setPlayDisabled(true)
     let randomNumber = Math.floor(Math.random() * 564)
