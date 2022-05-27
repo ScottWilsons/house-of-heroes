@@ -21,7 +21,7 @@ function App() {
   const [style, setStyle] = useState("heroCard-transform")
 
   const changeStyle = () => {
-    console.log(style)
+    // console.log(style)
     if (style === "heroCard-transform") {
       setStyle("heroCard-inner")
     } else {
