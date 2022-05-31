@@ -14,19 +14,19 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
             />
             <h1 className="player-heroname">{heros.name}</h1>
             <div className="playerCard-stats-cntr">
-            <div className="tooltip">
-              <button
-                className="player-button"
-                id="playerCard-combat"
-                disabled={disableButton}
-                onClick={() => theBattle("combat")}
-              >
-                {heros.powerstats.combat}
-                
-  <span className="tooltiptext">Combat</span>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-combat"
+                  disabled={disableButton}
+                  onClick={() => theBattle("combat")}
+                >
+                  {heros.powerstats.combat}
 
-              </button>
+                  <span className="tooltiptext">Combat</span>
+                </button>
               </div>
+              <div className="tooltip">
               <button
                 className="player-button"
                 id="playerCard-durability"
@@ -34,7 +34,10 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
                 onClick={() => theBattle("durability")}
               >
                 {heros.powerstats.durability}
+                <span className="tooltiptext">Durability</span>
               </button>
+              </div>
+              <div className="tooltip">
               <button
                 className="player-button"
                 id="playerCard-intelligence"
@@ -42,7 +45,10 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
                 onClick={() => theBattle("intelligence")}
               >
                 {heros.powerstats.intelligence}
+                <span className="tooltiptext">Intelligence</span>
               </button>
+              </div>
+              <div className="tooltip">
               <button
                 className="player-button"
                 id="playerCard-power"
@@ -50,7 +56,10 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
                 onClick={() => theBattle("power")}
               >
                 {heros.powerstats.power}
+                <span className="tooltiptext">Power</span>
               </button>
+              </div>
+              <div className="tooltip">
               <button
                 className="player-button"
                 id="playerCard-speed"
@@ -58,7 +67,10 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
                 onClick={() => theBattle("speed")}
               >
                 {heros.powerstats.speed}
+                <span className="tooltiptext">Speed</span>
               </button>
+              </div>
+              <div className="tooltip">
               <button
                 className="player-button"
                 id="playerCard-strength"
@@ -66,7 +78,9 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
                 onClick={() => theBattle("strength")}
               >
                 {heros.powerstats.strength}
+                <span className="tooltiptext">Strength</span>
               </button>
+              </div>
             </div>
           </div>
         </div>
