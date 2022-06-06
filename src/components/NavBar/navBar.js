@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
 //components
-import Title from "./title";
-import ScoreContainer from "./score";
+import Title from "./title"
+import ScoreContainer from "./score"
 
 //styling
-import "./navstyle.sass";
+import "./navstyle.sass"
 
 function NavBar({ computerScore, playerScore }) {
   return (
@@ -13,7 +13,7 @@ function NavBar({ computerScore, playerScore }) {
       <ScoreContainer computerScore={computerScore} playerScore={playerScore} />
       <Title />
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

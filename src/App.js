@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import NavBar from "./components/NavBar/navBar"
 import HeroCard from "./components/Card/heroCard"
 import PlayerCard from "./components/PlayerCard/playerCard"
+import Result from "./components/ResultText/result"
 
 //styling
 import "./style.sass"
@@ -19,6 +20,7 @@ function App() {
   const [disableButton, setDisableButton] = useState(false)
   const [playDisabled, setPlayDisabled] = useState(false)
   const [style, setStyle] = useState("heroCard-transform")
+  const [resultStyle, setResultStyle] = useState("resultHidden")
 
   const changeStyle = () => {
     // console.log(style)
@@ -51,24 +53,28 @@ function App() {
       playerCard.powerstats[selectedStat] ===
       computerCard.powerstats[selectedStat]
     ) {
-      console.log("Draw")
+      setResultStyle("resultDraw")
+      // console.log("Draw")
     } else if (
       playerCard.powerstats[selectedStat] <
       computerCard.powerstats[selectedStat]
     ) {
-      console.log("Lose")
+      setResultStyle("resultLose")
+      // console.log("Lose")
       setcomputerScore(computerScore + 1)
     } else if (
       playerCard.powerstats[selectedStat] >
       computerCard.powerstats[selectedStat]
     ) {
-      console.log("Win")
+      setResultStyle("resultWin")
+      // console.log("Win")
       setplayerScore(playerScore + 1)
     }
   }
 
   function initRound() {
     changeStyle()
+    setResultStyle("resultHidden")
     setDisableButton(false)
     setPlayDisabled(true)
     let randomNumber = Math.floor(Math.random() * 564)
@@ -90,6 +96,9 @@ function App() {
     <>
       <NavBar playerScore={playerScore} computerScore={computerScore} />
       <div className="container">
+        <div className="resultContainer">
+          <Result resultClassName={resultStyle} />
+        </div>
         <div className="cardContainer">
           {playerCard ? (
             <PlayerCard
