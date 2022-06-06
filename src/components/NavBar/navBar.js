@@ -2,23 +2,18 @@ import React from "react"
 
 //components
 import Title from "./title"
+import ScoreContainer from "./score"
 
 //styling
 import "./navstyle.sass"
 
-
 function NavBar({ computerScore, playerScore }) {
   return (
     <div className="navBar">
-
-      <div className="score-container">
-        <p className="scores">Player Score: {playerScore}</p>
-        <p className="scores">Computer Score: {computerScore}</p>
-      </div>
+      <ScoreContainer computerScore={computerScore} playerScore={playerScore} />
       <Title />
     </div>
   )
 }
 
 export default NavBar
-

@@ -1,6 +1,7 @@
-import React from "react";
-import "./playerCard.sass";
+import React from "react"
+import "./playerCard.sass"
 
+// #Refactor
 export default function PlayerCard({ heros, disableButton, theBattle }) {
   return (
     <>
@@ -14,58 +15,77 @@ export default function PlayerCard({ heros, disableButton, theBattle }) {
             />
             <h1 className="player-heroname">{heros.name}</h1>
             <div className="playerCard-stats-cntr">
-              <button
-                className="player-button"
-                id="playerCard-combat"
-                disabled={disableButton}
-                onClick={() => theBattle("combat")}
-              >
-                {heros.powerstats.combat}
-              </button>
-              <button
-                className="player-button"
-                id="playerCard-durability"
-                disabled={disableButton}
-                onClick={() => theBattle("durability")}
-              >
-                {heros.powerstats.durability}
-              </button>
-              <button
-                className="player-button"
-                id="playerCard-intelligence"
-                disabled={disableButton}
-                onClick={() => theBattle("intelligence")}
-              >
-                {heros.powerstats.intelligence}
-              </button>
-              <button
-                className="player-button"
-                id="playerCard-power"
-                disabled={disableButton}
-                onClick={() => theBattle("power")}
-              >
-                {heros.powerstats.power}
-              </button>
-              <button
-                className="player-button"
-                id="playerCard-speed"
-                disabled={disableButton}
-                onClick={() => theBattle("speed")}
-              >
-                {heros.powerstats.speed}
-              </button>
-              <button
-                className="player-button"
-                id="playerCard-strength"
-                disabled={disableButton}
-                onClick={() => theBattle("strength")}
-              >
-                {heros.powerstats.strength}
-              </button>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-combat"
+                  disabled={disableButton}
+                  onClick={() => theBattle("combat")}
+                >
+                  {heros.powerstats.combat}
+
+                  <span className="tooltiptext">Combat</span>
+                </button>
+              </div>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-durability"
+                  disabled={disableButton}
+                  onClick={() => theBattle("durability")}
+                >
+                  {heros.powerstats.durability}
+                  <span className="tooltiptext">Durability</span>
+                </button>
+              </div>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-intelligence"
+                  disabled={disableButton}
+                  onClick={() => theBattle("intelligence")}
+                >
+                  {heros.powerstats.intelligence}
+                  <span className="tooltiptext">Intelligence</span>
+                </button>
+              </div>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-power"
+                  disabled={disableButton}
+                  onClick={() => theBattle("power")}
+                >
+                  {heros.powerstats.power}
+                  <span className="tooltiptext">Power</span>
+                </button>
+              </div>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-speed"
+                  disabled={disableButton}
+                  onClick={() => theBattle("speed")}
+                >
+                  {heros.powerstats.speed}
+                  <span className="tooltiptext">Speed</span>
+                </button>
+              </div>
+              <div className="tooltip">
+                <button
+                  className="player-button"
+                  id="playerCard-strength"
+                  disabled={disableButton}
+                  onClick={() => theBattle("strength")}
+                >
+                  {heros.powerstats.strength}
+                  <span className="tooltiptext">Strength</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
