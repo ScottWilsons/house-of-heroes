@@ -16,15 +16,18 @@ $large: 900px;
     width: 100%;
 
 .resultContainer
-    z-index: 1;
+    margin: auto;
+    z-index: 2;
     position: absolute;
+    display: block;
+    top: 30%;
     
 .cardContainer
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
-
+   
 .battleButton
     z-index: 2;
     border-radius: 50%; 
@@ -32,7 +35,8 @@ $large: 900px;
     width: 50px;
     margin-bottom: 10%;
 
-
+.btn-cntr
+    z-index: 2;
         
 @media screen and (orientation:portrait)
     .container
@@ -40,5 +44,10 @@ $large: 900px;
         background-position: center;
     
     .cardContainer
+        height: 100%;
         flex-direction: column-reverse;
+        justify-content: flex-end;
 
+    .resultContainer
+        position: absolute;
+        top: 5px;
