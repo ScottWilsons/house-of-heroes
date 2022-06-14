@@ -1,7 +1,13 @@
 $x-small: 320px;
 $small: 390px;
 $medium: 540px;
-$large: 900px;
+$large: 950px;
+
+$xx-small-height: 280px;
+$x-small-height: 320px;
+$small-height: 390px;
+$medium-height: 540px;
+$large-height: 1180px;
     
 .container 
     display: flex;
@@ -49,3 +55,16 @@ $large: 900px;
 
     .resultContainer
         top: auto;
+
+@media screen and (min-height: $xx-small-height) and (max-height: $x-small-height) and (orientation:landscape)
+    .battleButton
+        height: 18px;
+        width: 70px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-size: 10px;
+
+@media screen and (min-width: $medium +1) and (max-width: $large) and (orientation:portrait)
+        .battleButton
+            margin-bottom: 8vh;
+       

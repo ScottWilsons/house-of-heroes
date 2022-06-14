@@ -1,3 +1,14 @@
+$x-small: 320px;
+$small: 390px;
+$medium: 540px;
+$large: 950px;
+        
+$xx-small-height: 280px;
+$x-small-height: 320px;
+$small-height: 390px;
+$medium-height: 540px;
+$large-height: 1180px;
+
 .playerCard
         background-color: transparent;
         width: 268px;
@@ -144,3 +155,58 @@
         
         .player-heroname
                 font-size: 0.8em;
+
+@media screen and (min-width: $medium +1) and (max-width: $large) and (orientation:portrait)
+        .playerCard
+                width: 268px;
+                height: 380px;
+        
+        .playerCard-stats-cntr
+                align-items: center;
+                padding-bottom: 100px;
+
+        .player-button
+                width: 34px;
+                height: 34px;
+                
+        .plyrCard-image
+                margin-bottom: 1%;
+        
+        .player-heroname
+                font-size: 0.8em;
+        
+
+@media screen and (min-height: $xx-small-height) and (max-height: $x-small-height) and (orientation:landscape)
+        .playerCard
+                width: 147.5px;
+                height: 210px;
+
+        .plyrCard-image
+                margin-bottom: 1%;
+        
+        .player-button
+                width: 24.5px;
+                height: 24.5px;
+                font: 0.6em sans-serif;
+        
+        .player-heroname
+                font-size: 0.8em;
+
+@media screen and (min-height: $x-small-height) and (max-height: $medium-height) and (orientation:landscape)
+        .playerCard
+                width: 162.25px;
+                height: 231px;
+
+        .plyrCard-image
+                margin-bottom: 1%;
+        
+        .player-button
+                width: 24.5px;
+                height: 24.5px;
+                font: 0.6em sans-serif;
+        
+        .player-heroname
+                font-size: 0.8em;
+
+
+       
