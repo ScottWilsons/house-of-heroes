@@ -1,3 +1,9 @@
+$xx-small-height: 280px;
+$x-small-height: 320px;
+$small-height: 390px;
+$medium-height: 540px;
+$large-height: 1180px;
+
 .resultHidden
     visibility: hidden;
 
@@ -24,4 +30,13 @@
     opacity: 0;
     transition: opacity 1.5s linear;
 
+@media screen and (orientation:portrait)
+    #result
+        width: 267px;
+        height: 100px;
+
+@media screen and (min-height: $xx-small-height) and (max-height: $medium-height) and (orientation:landscape)
+    #result
+        width: 267px;
+        height: 100px;
 

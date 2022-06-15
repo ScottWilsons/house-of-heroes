@@ -1,7 +1,8 @@
+$xx-small: 200px;
 $x-small: 320px;
 $small: 390px;
 $medium: 540px;
-$large: 900px;
+$large: 1180px;
 
 .navBar 
     display: flex;
@@ -38,12 +39,17 @@ $large: 900px;
     width: 30px;
     height: 50px;
 
-@media screen and (max-width: $x-small)
+@media screen and (min-width: $xx-small) and (max-width: $x-small)
     .scores
         font-size: xx-small;
 
     .title
         font-size: 12px;
+
+    .logo
+        width: 15px;
+        height: 25px;
+    
 
 @media screen and (min-width: $x-small) and (max-width: $small)
     .scores
@@ -82,7 +88,7 @@ $large: 900px;
         font-size: small;
 
     .title
-        font-size: 18px;
+        font-size: 16px;
 
     .logo
         width: 20px;
