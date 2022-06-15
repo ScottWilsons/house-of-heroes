@@ -1,6 +1,17 @@
+$x-small: 320px;
+$small: 390px;
+$medium: 540px;
+$large: 950px;
+        
+$xx-small-height: 280px;
+$x-small-height: 320px;
+$small-height: 390px;
+$medium-height: 540px;
+$large-height: 1180px;
+        
 .heroCard
         background-color: transparent;
-        width: 268px;
+        width: 273px;
         height: 380px;
         perspective: 1000px; // Remove this if you don't want the 3D effect 
         display: flex;
@@ -13,8 +24,6 @@
         width: 100%;
         transition: transform 0.4s;
         transform-style: preserve-3d;
-        border: 2px solid #000000; 
-        box-shadow: 1px 2px 15px 0.5px grey;
         border-radius: 10px;
         
 .heroCard-transform 
@@ -23,9 +32,7 @@
         width: 100%;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        border: 2px solid #000000; 
-        box-shadow: 1px 2px 15px 0.5px grey;
-        border-radius: 5px;
+        border-radius: 10px;
         transform: rotateY(180deg);
 
 .heroCard-back, .heroCard-front
@@ -34,7 +41,9 @@
         height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        border-radius: 5px;
+        border-radius: 10px;
+        border: 2px solid #000000; 
+        box-shadow: 1px 2px 15px 0.5px grey;
 
 .heroCard-image
         height: 80%;
@@ -63,23 +72,24 @@
         padding: 3.5%;
         bottom: 11.5%;
         margin: 0px;
-
-.heroCard-stats
-        border-radius: 50%;
-        width: 30px; 
-        height: 30px;
-        margin: auto;
-   
+  
+// A class that is used to center the stats div's.
 .heroCard-stats-cntr
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
+        
 .heroCard-stat-nmb
         font: 0.8em sans-serif;
         font-weight: bold;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        top: 50%;
+        display: flex;
+        justify-content: center;
         text-align: center;
-        margin: 25% auto;
+        align-items: center;
 
 #heroCard-combat
         border: 1px solid #000000;
@@ -110,3 +120,71 @@
         border: 1px solid #000000;
         background-color: #f5df2e;
         background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
+
+@media screen and (orientation:portrait)
+        .heroCard
+                width: 176.25px;
+                height: 247.5px;
+
+        .heroCard-image
+                margin-bottom: 1%;
+                
+        .heroname
+                font-size: 0.8em;
+
+        .heroCard-stat-nmb
+                font: 0.7em sans-serif;
+                width: 23px;
+                height: 23px;
+
+@media screen and (min-width: $medium +1) and (max-width: $large) and (orientation:portrait)
+        .heroCard
+                width: 273px;
+                height: 380px;
+
+        .heroCard-stat-nmb
+                width: 30px;
+                height: 30px;
+                
+        .heroCard-image
+                margin-bottom: 1%;
+        
+        .heroname
+                font-size: 0.8em;
+
+        .heroCard-stats-cntr
+                position: relative;
+                top: 7%;
+                transform: translateY(-50%);
+
+@media screen and (min-height: $xx-small-height) and (max-height: $x-small-height) and (orientation:landscape)
+        .heroCard
+                width: 149.5px
+                height: 210px;
+
+        .heroCard-image
+                margin-bottom: 1%;
+        
+        .heroCard-stat-nmb
+                width: 23px;
+                height: 23px;
+                font: 0.6em sans-serif;
+        
+        .heroname
+                font-size: 0.8em;
+
+@media screen and (min-height: $x-small-height) and (max-height: $medium-height) and (orientation:landscape)
+        .heroCard
+                width: 164.75px;
+                height: 231px;
+
+        .heroCard-image
+                margin-bottom: 1%;
+        
+        .heroCard-stat-nmb
+                width: 23px;
+                height: 23px;
+                font: 0.6em sans-serif;
+        
+        .heroname
+                font-size: 0.8em;

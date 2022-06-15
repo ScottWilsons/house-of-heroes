@@ -1,3 +1,14 @@
+$x-small: 320px;
+$small: 390px;
+$medium: 540px;
+$large: 950px;
+
+$xx-small-height: 280px;
+$x-small-height: 320px;
+$small-height: 390px;
+$medium-height: 540px;
+$large-height: 1180px;
+    
 .container 
     display: flex;
     align-items: center;
@@ -5,14 +16,15 @@
     flex-direction: column;
     position: absolute;
     top: 10%;
-    background-image: url("../public/volcano.jpg");
+    background-image: url("../public/volcano.webp");
     background-size: cover;
     height: 90%;
     width: 100%;
 
 .resultContainer
-    z-index: 1;
+    z-index: 2;
     position: absolute;
+    top: 35%;
     
 .cardContainer
     display: flex;
@@ -20,6 +32,10 @@
     align-items: flex-end;
     justify-content: center;
 
+//#futurechange for changing the color of the play again button when it is disabled
+// button:disabled
+//     background-color: green;
+   
 .battleButton
     z-index: 2;
     border-radius: 50%; 
@@ -27,3 +43,45 @@
     width: 50px;
     margin-bottom: 10%;
 
+.btn-cntr
+    z-index: 2;
+        
+@media screen and (orientation:portrait)
+    .container
+        background-image: url("../public/volcanoportrait.webp");
+        background-position: center;
+    
+    .cardContainer
+        height: 100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center
+
+    .resultContainer
+        top: auto;
+
+    .battleButton
+        margin-bottom: 20%;
+
+@media screen and (min-height: $xx-small-height) and (max-height: $x-small-height) and (orientation:landscape)
+    .battleButton
+        height: 18px;
+        width: 70px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-size: 10px;
+
+    .resultContainer
+        top: auto;
+
+@media screen and (min-height: $x-small-height) and (max-height: $medium-height) and (orientation:landscape)
+    .resultContainer
+        top: 25%;
+
+@media screen and (min-width: $medium +1) and (max-width: $large) and (orientation:portrait)
+        .battleButton
+            margin-bottom: 8vh;
+
+        .resultContainer
+            top: auto;
+       

@@ -1,3 +1,9 @@
+$xx-small: 200px;
+$x-small: 320px;
+$small: 390px;
+$medium: 540px;
+$large: 1180px;
+
 .navBar 
     display: flex;
     align-items: center;
@@ -25,10 +31,67 @@
 .scores
     text-align: left;
     padding-left: 5px;
+    margin: 0px;
 
 .logo
-    background-image: url("../../../public/bluehhlogo.png");
+    background-image: url("../../../public/bluehhlogo.webp");
     background-size: cover;
     width: 30px;
     height: 50px;
+
+@media screen and (min-width: $xx-small) and (max-width: $x-small)
+    .scores
+        font-size: xx-small;
+
+    .title
+        font-size: 12px;
+
+    .logo
+        width: 15px;
+        height: 25px;
+    
+
+@media screen and (min-width: $x-small) and (max-width: $small)
+    .scores
+        font-size: x-small;
+
+    .title
+        font-size: 14px;
+        
+@media screen and (min-width: $small) and (max-width: $medium)
+    .scores
+        font-size: small;
+
+    .title
+        font-size: 18px;
+
+@media screen and (min-width: $medium) and (max-width: $large)
+    .scores
+        font-size: medium;
+
+    .title
+        font-size: 24px;
+
+@media screen and (max-height: 320px) 
+    .scores
+        font-size: xx-small;
+
+    .title
+        font-size: 12px;
+
+    .logo
+        width: 15px;
+        height: 25px;
+
+@media screen and (min-height: 321px)  and (max-height: $medium)
+    .scores
+        font-size: small;
+
+    .title
+        font-size: 16px;
+
+    .logo
+        width: 20px;
+        height: 32.5px;
+
 

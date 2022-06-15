@@ -96,9 +96,6 @@ function App() {
     <>
       <NavBar playerScore={playerScore} computerScore={computerScore} />
       <div className="container">
-        <div className="resultContainer">
-          <Result resultClassName={resultStyle} />
-        </div>
         <div className="cardContainer">
           {playerCard ? (
             <PlayerCard
@@ -109,6 +106,17 @@ function App() {
           ) : (
             <></>
           )}
+          <div className="resultContainer">
+            <Result resultClassName={resultStyle} />
+          </div>
+          {computerCard ? (
+            <HeroCard heros={computerCard} style={style} />
+          ) : (
+            <></>
+          )}
+        </div>
+
+        <div className="btn-cntr">
           <button
             className="battleButton"
             disabled={playDisabled}
@@ -116,11 +124,6 @@ function App() {
           >
             {playButton ? "Play Again" : "Play"}
           </button>
-          {computerCard ? (
-            <HeroCard heros={computerCard} style={style} />
-          ) : (
-            <></>
-          )}
         </div>
       </div>
     </>
