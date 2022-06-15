@@ -31,6 +31,9 @@ $large-height: 1180px;
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
+
+button:disabled
+    background-color: green;
    
 .battleButton
     z-index: 2;
@@ -56,6 +59,9 @@ $large-height: 1180px;
     .resultContainer
         top: auto;
 
+    .battleButton
+        margin-bottom: 20%;
+
 @media screen and (min-height: $xx-small-height) and (max-height: $x-small-height) and (orientation:landscape)
     .battleButton
         height: 18px;
@@ -64,7 +70,17 @@ $large-height: 1180px;
         border-radius: 10px;
         font-size: 10px;
 
+    .resultContainer
+        top: auto;
+
+@media screen and (min-height: $x-small-height) and (max-height: $medium-height) and (orientation:landscape)
+    .resultContainer
+        top: 25%;
+
 @media screen and (min-width: $medium +1) and (max-width: $large) and (orientation:portrait)
         .battleButton
             margin-bottom: 8vh;
+
+        .resultContainer
+            top: auto;
        

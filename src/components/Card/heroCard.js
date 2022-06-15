@@ -18,27 +18,28 @@ function HeroCard({ heros, style }) {
             />
             <h1 className="heroname">{heros.name}</h1>
             <div className="heroCard-stats-cntr">
-              <div className="heroCard-stats" id="heroCard-combat">
-                <p className="heroCard-stat-nmb">{heros.powerstats.combat}</p>
+              <div className="heroCard-stat-nmb" id="heroCard-combat">
+                {heros.powerstats.combat}
               </div>
-              <div className="heroCard-stats" id="heroCard-durability">
-                <p className="heroCard-stat-nmb">
-                  {heros.powerstats.durability}
-                </p>
+
+              <div className="heroCard-stat-nmb" id="heroCard-durability">
+                {heros.powerstats.durability}
               </div>
-              <div className="heroCard-stats" id="heroCard-intelligence">
-                <p className="heroCard-stat-nmb">
-                  {heros.powerstats.intelligence}
-                </p>
+
+              <div className="heroCard-stat-nmb" id="heroCard-intelligence">
+                {heros.powerstats.intelligence}
               </div>
-              <div className="heroCard-stats" id="heroCard-power">
-                <p className="heroCard-stat-nmb">{heros.powerstats.power}</p>
+
+              <div className="heroCard-stat-nmb" id="heroCard-power">
+                {heros.powerstats.power}
               </div>
-              <div className="heroCard-stats" id="heroCard-speed">
-                <p className="heroCard-stat-nmb">{heros.powerstats.speed}</p>
+
+              <div className="heroCard-stat-nmb" id="heroCard-speed">
+                {heros.powerstats.speed}
               </div>
-              <div className="heroCard-stats" id="heroCard-strength">
-                <p className="heroCard-stat-nmb">{heros.powerstats.strength}</p>
+
+              <div className="heroCard-stat-nmb" id="heroCard-strength">
+                {heros.powerstats.strength}
               </div>
             </div>
           </div>
